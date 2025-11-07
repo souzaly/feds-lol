@@ -1,13 +1,13 @@
 <img width="1892" height="941" alt="hero" src="https://github.com/user-attachments/assets/336d92a3-da70-4be9-a036-167c6624dbff" />
 
 <p align="center">
-  <a href="https://slat.cc/">
-    <h1 align="center">slat.cc</h1>
+  <a href="https://feds.lol/">
+    <h1 align="center">feds.cc</h1>
   </a>
 </p>
 
 <p align="center">
-Slat.cc is a feature-rich link-in-bio tool with over 80,000 users.
+feds.cclol is a feature-rich link-in-bio tool with over 80,000 users.
 </p>
 <p align="center">
   <a href="https://www.linkedin.com/in/maria-nguyen-le">
@@ -35,7 +35,7 @@ Slat.cc is a feature-rich link-in-bio tool with over 80,000 users.
 
 ## Introduction
 
-In this repository, you'll find **snippets of code** from my solo development and design of slat.cc.
+In this repository, you'll find **snippets of code** from my solo development and design of feds.lol.
 Additionally, the `/images` folder contains **actual screenshots** of various pages, features and UI elements of the platform.
 This repo doesn’t include full business logic or anything sensitive - just the core structure and my coding approach.
 
@@ -85,22 +85,20 @@ Further down, you can explore the **the nearly complete folder structure** of th
 - responsive modals – native drawers for mobile, dialogs on desktop
 - partial use of shadcn/ui for consistent styling and accessible primitives
 
-For all features, go to [docs](https://slat.cc/docs)
-
 ## Project Structure
 
 ```
   ├── app
+  │   ├── (auth)
+  │   ├── (errors)
+  │   ├── (marketing)
   │   ├── [username]
   │   │   ├── page.tsx
   │   │   └── opengraph-image.tsx
-  │   ├── (root)
-  │   │   ├── (auth)
-  │   │   └── (marketing)
   │   ├── api
   │   ├── casino
   │   ├── dashboard
-  │   ├── docs
+  │   ├── docs.feds.lol
   │   │   └── [[...slug]]
   │   ├── error.tsx
   │   ├── not-found.tsx
@@ -110,47 +108,87 @@ For all features, go to [docs](https://slat.cc/docs)
   │   ├── sitemap.ts
   │   └── ...
   ├── components
-  │   ├── biolink
-  │   ├── ui
-  │   ├── editor
-  │   ├── layout
+  │   ├── dashboard
+  │   ├── email
   │   ├── form
-  │   └── email
+  │   ├── media
+  │   ├── profile
+  │   ├── shared
+  │   └── ui
+  ├── hooks
   ├── lib
   │   ├── analytics
-  │   ├── data
+  │   ├── api
+  │   ├── auth
+  │   ├── casino
+  │   ├── constants
+  │   ├── drizzle
+  │   ├── features
+  │   │   ├── accounts
   │   │   ├── actions
-  │   │   ├── biolink
-  │   │   ├── coments
+  │   │   ├── app
+  │   │   ├── badges
+  │   │   ├── comments
+  │   │   ├── config
+  │   │   │   ├── actions
+  │   │   │   │   ├── assets.ts
+  │   │   │   │   ├── avatar.ts
+  │   │   │   │   ├── card.ts
+  │   │   │   │   ├── colors.ts
+  │   │   │   │   ├── comments.ts
+  │   │   │   │   ├── fonts.ts
+  │   │   │   │   ├── info.ts
+  │   │   │   │   └── ...
+  │   │   │   ├── queries.ts
+  │   │   │   ├── defaults.ts
+  │   │   │   ├── schemas.ts
+  │   │   │   └── ...
   │   │   ├── embeds
+  │   │   ├── giveaways
+  │   │   ├── links
+  │   │   ├── metadata
+  │   │   ├── orders
+  │   │   ├── profile
+  │   │   ├── tags
+  │   │   ├── templates
+  │   │   ├── tracks
   │   │   ├── users
   │   │   │   ├── actions
-  │   │   │   │   │  ├── select-user.ts
-  │   │   │   │   │  ├── update-user.ts
-  │   │   │   │   │  ├── index.ts
-  │   │   │   │   │  ├── ...
-  │   │   │   ├── constants.ts
+  │   │   │   │   ├── email.ts
+  │   │   │   │   ├── password.ts
+  │   │   │   │   ├── username.ts
+  │   │   │   │   ├── index.ts
+  │   │   │   │   └── ...
+  │   │   │   ├── utils
+  │   │   │   │   ├── email.ts
+  │   │   │   │   ├── user-id.ts
+  │   │   │   │   ├── index.ts
+  │   │   │   │   └── ...
+  │   │   │   ├── validators
+  │   │   │   │   ├── email.ts
+  │   │   │   │   ├── username.ts
+  │   │   │   │   ├── index.ts
+  │   │   │   │   └── ...
+  │   │   │   ├── queries.ts
+  │   │   │   ├── roles.ts
   │   │   │   ├── schemas.ts
-  │   │   │   └── utils.ts
-  │   │   ├── orders
-  │   │   ├── templates
-  │   │   ├── links
-  │   │   ├── tracks
-  │   │   ├── metadata
+  │   │   │   └── types.ts
   │   │   └── ...
-  │   ├── auth
-  │   ├── api
-  │   ├── stores
-  │   ├── drizzle
+  │   ├── integrations
+  │   ├── media
   │   ├── middleware
+  │   ├── routes
+  │   ├── server
+  │   ├── stores
+  │   ├── utils
   │   ├── zod
-  │   ├── webhook.ts
+  │   ├── config.ts
   │   ├── email.ts
-  │   ├── ip.ts
-  │   ├── bcrypt.ts
   │   ├── stripe.ts
   │   ├── types.ts
+  │   ├── webhook.ts
   │   └── ...
+  ├── styles
   ├── public
   ├── tests/casino
   └── ...
